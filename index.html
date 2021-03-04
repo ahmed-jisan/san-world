@@ -1,0 +1,1558 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="UTF-8">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" rel="stylesheet" type="text/css"/> 
+  <title>San World</title>
+  
+  <style>
+  
+  *{
+  
+  margin: 0;
+  padding: 0;
+  font-family: KongkaBorno;
+  box-sizing: border-box;
+  
+  }
+  
+  @font-face{
+  
+  font-family: KongkaBorno;
+  src: url(KongkaBorno.ttf);
+  
+  }
+  
+  :root{
+  
+  --cl1: #fefefe;
+  --cl2: #555;
+  
+  }
+  
+  ::selection{
+  
+  color: var(--cl1);
+  background: var(--cl2);
+  
+  }
+  
+  #container{
+  
+  width: 980px;
+  margin: auto;
+  
+  }
+  
+  #nav{
+  
+  width: 100%;
+  height: 100px;
+  background: var(--cl1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 50px;
+  
+  }
+  
+  .nav{
+  
+  position: fixed!important;
+  top: 0;
+  left: 0;
+  box-shadow: 0px 1px 1px var(--cl2);
+  animation: 0.5s navimate;
+  z-index: 5555;
+  
+  }
+  
+  @keyframes navimate{
+  
+  from{transform: translateY(-20px);opacity: 0;}
+  to{transform: translateY(0px);opacity: 1;}
+  
+  }
+  
+  #nav #logo{
+  
+  text-decoration: none;
+  color: var(--cl2);
+  font-size: 50px;
+  padding: 0px 20px;
+  text-shadow: 2px 2px 2px var(--cl2);
+  transition: all 0.5s;
+  
+  }
+  
+  #nav #logo:hover{
+  
+  color: #000;
+  text-shadow: 2px 2px 2px var(--cl2);
+  
+  }
+  
+  #nav #links{
+  
+  display: flex;
+  
+  }
+  
+  #nav #links a{
+  
+  text-decoration: none;
+  color: var(--cl2);
+  font-size: 22px;
+  margin: 0px 0px;
+  padding: 0px 20px;
+  transition: all 0.5s;
+  border-radius: 5px;
+  
+  }
+  
+  #nav #links a:hover{
+  
+  background: var(--cl2);
+  color: var(--cl1);
+  
+  }
+  
+  #landing{
+  
+  width: 100%;
+  background: var(--cl1);
+  padding: 100px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  }
+  
+  .landing{
+  
+  margin-top: 80px!important;
+  
+  }
+  
+  #myself{
+  
+  width: 420px;
+  text-align: right;
+  
+  }
+  
+  #myself h3{
+  
+  color: var(--cl2);
+  font-size: 30px;
+  margin-bottom: 40px;
+  
+  }
+  
+  #myself h3 span{
+  
+  font-size: 40px;
+  text-shadow: 1px 1px 1px var(--cl2);
+  font-weight: 100;
+  
+  }
+  
+  #myself p{
+  
+  color: var(--cl2);
+  font-size: 20px;
+  margin-bottom: 15px;
+  
+  }
+  
+  #myself button{
+  
+  border: 2px solid var(--cl2);
+  outline: none;
+  font-size: 30px;
+  padding: 0px 20px;
+  background: var(--cl2);
+  color: var(--cl1);
+  border-radius: 5px;
+  transition: all 0.5s;
+  
+  }
+  
+  #myself button:hover{
+  
+  transform: translateY(-10px);
+  box-shadow: 0px 20px 20px -10px var(--cl2);
+  
+  }
+  
+  #slider{
+  
+  height: 250px;
+  width: 400px;
+  overflow: hidden;
+  position: relative;
+  
+  }
+  
+  #slide{
+  
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  display: none;
+  
+  }
+  
+  .slide{
+  
+  display: block!important;
+  
+  }
+  
+  #slide img{
+  
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: 2s iimate;
+  
+  }
+  
+  @keyframes iimate{
+  
+  from{top: -150px;opacity: 0;}
+  70%{top: 40px;}
+  to{top: 0px;opacity: 1;}
+  
+  }
+  
+  #slide h4{
+  
+  position: absolute;
+  bottom: 16px;
+  left: 50px;
+  font-size: 40px;
+  background: rgba(255,255,255,0.4);
+  color: var(--cl2);
+  padding: 0px 10px;
+  border-radius: 5px;
+  animation: 2s himate;
+  
+  }
+  
+  @keyframes himate{
+  
+  from{left: 100px;opacity: 0;}
+  70%{left: 0px;}
+  to{left: 50px;opacity: 1;}
+  
+  }
+  
+  #about{
+  
+  width: 980px;
+  
+  }
+  
+  #aboutme,#skills{
+  
+  background: var(--cl1);
+  padding: 60px 50px;
+  overflow: hidden;
+  
+  }
+  
+  #aboutme h3,#skills h3{
+  
+  font-size: 40px;
+  line-height: 40px;
+  font-weight: 100;
+  margin-bottom: 60px;
+  color: var(--cl2);
+  border-left: 5px solid var(--cl2);
+  padding-left: 10px;
+  
+  }
+  
+  #myImg,#skillImg{
+  
+  width: 350px;
+  overflow: hidden;
+  background: var(--cl1);
+  padding: 10px;
+  float: left;
+  border-radius: 20px;
+  
+  }
+  
+  #skillImg{
+  
+  width: 380px;
+  float: right;
+  position: relative;
+  top: 65px;
+  
+  }
+  
+  #myImg img,#skillImg img{
+  
+  width: 100%;
+  
+  }
+  
+  #myDes{
+  
+  width: 500px;
+  float: right;
+  
+  }
+  
+  #mySkill{
+  
+  width: 480px;
+  float: left;
+  
+  }
+  
+  #myDes h2,#mySkill h2{
+  
+  font-size: 35px;
+  line-height: 35px;
+  color: var(--cl2);
+  margin-bottom: 30px;
+  
+  }
+  
+  #mySkill h2{
+  
+  margin-bottom: 50px;
+  
+  }
+  
+  #myDes p{
+  
+  color: var(--cl2);
+  font-size: 20px;
+  line-height: 45px;
+  
+  }
+  
+  #myDes p span{
+  
+  font-weight: bold;
+  
+  }
+  
+  #skillBar{
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  
+  }
+  
+  #skillBar:last-child{
+  
+  margin-bottom: 0;
+  
+  }
+  
+  #skillBar div{
+  
+  color: var(--cl2);
+  font-size: 17px;
+  line-height: 30px;
+  
+  }
+  
+  #skillBar div:nth-child(1){
+  
+  width: 20%;
+  
+  }
+  
+  #skillBar div:nth-child(3){
+  
+  width: 10%;
+  text-align: center;
+  
+  }
+  
+  #skillBar #skill{
+  
+  height: 15px;
+  width: 70%;
+  background: var(--cl1);
+  border: 1px solid var(--cl2);
+  padding: 3px;
+  border-radius: 40px;
+  box-shadow: 1px 1px 1px var(--cl2);
+  
+  }
+  
+  #skillBar #skill div{
+  
+  height: 100%;
+  background: var(--cl2);
+  border-radius: 40px; 
+  
+  }
+  
+  .skill{
+  
+  animation: 1.5s skill;
+  
+  }
+  
+  @keyframes skill{
+  
+  from{width: 0%;opacity: 0;}
+  
+  }
+  
+  #services{
+  
+  width: 100%;
+  background: var(--cl1);
+  padding: 80px 50px;
+  
+  }
+  
+  #services h3,#exp h3{
+  
+  font-size: 50px;
+  width: 250px;
+  margin: auto;
+  text-align: center;
+  padding: 0px 30px;
+  font-weight: 100;
+  color: var(--cl2);
+  margin-bottom: 50px;
+  position: relative;
+  
+  }
+  
+  #services h3:after,
+  #services h3:before,
+  #exp h3:after,
+  #exp h3:before{
+  
+  content: "";
+  position: absolute;
+  background: var(--cl2);
+  
+  }
+  
+  #services h3:after{
+  
+  top: 0px;
+  left: 10px;
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  
+  }
+  
+  #services h3:before{
+  
+  bottom: 0px;
+  right: 20px;
+  height: 20px;
+  width: 20px;
+  border-radius: 20px;
+  
+  }
+  
+  #sercards{
+  
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  }
+  
+  #sercards #card{
+  
+  width: 280px;
+  overflow: hidden;
+  background: var(--cl1);
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid var(--cl2);
+  box-shadow: 0px 0px 0px 0px var(--cl2);
+  transition: all 0.5s;
+  
+  }
+  
+  #sercards #card:hover{
+  
+  transform: translateY(-30px);
+  box-shadow: 0px 20px 30px -20px var(--cl2);
+  
+  }
+  
+  #card img{
+  
+  width: 100%;
+  height: 150px;
+  
+  }
+  
+  #card h4{
+  
+  color: var(--cl2);
+  font-size: 25px;
+  line-height: 25px;
+  font-weight: normal;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  
+  }
+  
+  #card p{
+  
+  color: var(--cl2);
+  font-size: 17px;
+  margin-bottom: 20px;
+  height: 120px;
+  
+  }
+  
+  #card button{
+  
+  border: 2px solid var(--cl2);
+  outline: none;
+  font-size: 20px;
+  padding: 0px 20px;
+  background: var(--cl2);
+  color: var(--cl1);
+  border-radius: 5px;
+  transition: all 0.5s;
+  
+  }
+  
+  #card button:hover{
+  
+  transform: translateY(-10px);
+  box-shadow: 0px 15px 15px -8px var(--cl2);
+  
+  }
+  
+  #exp{
+  
+  width: 100%;
+  background: var(--cl1);
+  padding: 60px 50px;
+  
+  }
+  
+  #exp h3{
+  
+  line-height: 90px;
+  
+  }
+  
+  #exp h3:after{
+  
+  bottom: 0px;
+  left: 30px;
+  height: 4px;
+  width: 30px;
+  border-radius: 20px;
+  
+  }
+  
+  #exp h3:before{
+  
+  bottom: 0px;
+  right: 30px;
+  height: 4px;
+  width: 150px;
+  border-radius: 20px;
+  
+  }
+  
+  #expSec{
+  
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  }
+  
+  #expSec #expImg{
+  
+  width: 50%;
+  
+  }
+  
+  #expSec #expImg  img{
+  
+  width: 100%;
+  
+  }
+  
+  #expDes{
+  
+  width: 45%;
+  
+  }
+  
+  #expDes h4{
+  
+  color: var(--cl2);
+  font-size: 30px;
+  line-height: 30px;
+  margin-bottom: 20px;
+  
+  }
+  
+  #expDes ul li{
+  
+  list-style-type: none;
+  color: var(--cl2);
+  font-size: 20px;
+  line-height: 40px;
+  word-spacing: 5px;
+  position: relative;
+  
+  }
+  
+  #counter{
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  }
+  
+  #counter #countBlock{
+  
+  width: 160px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  }
+  
+  #countBlock p{
+  
+  font-size: 25px;
+  line-height: 40px;
+  color: var(--cl2);
+  
+  }
+  
+  #countBlock p:nth-child(1){
+  
+  font-weight: bold;
+  font-size: 50px;
+  font-family: curs;
+  letter-spacing: 3px;
+  
+  }
+  
+  @font-face{
+  
+  font-family: curs;
+  src: url(hickoryJack.ttf);
+  
+  }
+  
+  #projects{
+  
+  width: 100%;
+  background: var(--cl1);
+  padding:60px 50px;
+  overflow: hidden;
+  
+  }
+  
+  #projectHead{
+  
+  border-left: 6px solid var(--cl2);
+  padding-left: 20px;
+  margin-bottom:  50px;
+  
+  }
+  
+  #projectHead h4{
+  
+  font-size: 40px;
+  font-weight: normal;
+  line-height: 50px;
+  color:  var(--cl2);
+  
+  }
+  
+  #projectHead p{
+  
+  font-size: 20px;
+  line-height: 30px;
+  color:  var(--cl2);
+  
+  }
+  
+  #projectButtons{
+  
+  margin-bottom:  50px;
+  
+  }
+  
+  #projectButtons button{
+  
+  font-size: 20px;
+  border: none;
+  outline: none;
+  padding:  2px 25px;
+  margin-right: 20px;
+  background: var(--cl2);
+  color: var(--cl1);
+  border-radius: 4px;
+  box-shadow: 0px 10px 10px -5px var(--cl2);
+  transition: all 0.5s;
+  
+  }
+  
+  #projectButtons button:hover{
+  
+  box-shadow: 0px 1px 2px var(--cl2);
+  
+  }
+  
+  #projectBody{
+  
+  width: 100%;
+  height: 460px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  
+  }
+  
+  #projectBody #project{
+  
+  width: 250px;
+  height: 180px;
+  position: relative;
+  border: 10px solid var(--cl2);
+  border-radius: 5px;
+  box-shadow: 0px 20px 20px -15px var(--cl2);
+  transition: all 0.5s;
+  animation: 0.5s show;
+  overflow: hidden;
+  
+  }
+  
+  @keyframes show{
+  
+  from{transform: scale(0)}
+  to{transform: scale(1)}
+  
+  }
+  
+  #project  button{
+  
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+  font-size: 18px;
+  padding: 0px 20px;
+  outline: none;
+  border: none;
+  color: var(--cl1);
+  background: var(--cl2);
+  border-radius: 5px;
+  transform: translateY(50px);
+  opacity: 0;
+  transition: all 0.5s;
+  box-shadow: 0px 10px 10px -6px var(--cl2);
+  
+  }
+  
+  #project  button:hover{
+  
+  color: var(--cl2);
+  background: var(--cl1);
+  
+  }
+  
+  #project:hover button{
+  
+  transform: translateY(0px);
+  opacity: 1;
+  
+  }
+  
+  #project img{
+  
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s;
+  
+  }
+  
+  #project:hover img{
+  
+  transform: scale(1.2);
+  
+  }
+  
+  .hideProject{
+  
+  width: 0!important;
+  height: 0!important;
+  
+  }
+  
+  #contacts{
+  
+  width: 100%;
+  background: var(--cl1);
+  padding: 60px 0px;
+  
+  }
+  
+  #contacts h3{
+  
+  width: 180px;
+  font-size: 50px;
+  margin-bottom: 80px;
+  color: var(--cl2);
+  margin-left: 50px;
+  font-weight: normal;
+  line-height: 60px;
+  border-bottom: 2px solid var(--cl2);
+  text-align: center;
+  
+  }
+  
+  #contacts #gmap iframe{
+  
+  margin-bottom: 60px;
+  width: 100%;
+  height: 400px;
+  
+  }
+  
+  #contacts #contactMe{
+  
+  width: 100%;
+  padding: 0px  50px;
+  display: flex;
+  alignj-items: flex-start;
+  justify-content: space-between;
+  
+  }
+  
+  #contactMe #getintouch{
+  
+  width: 420px;
+  color: var(--cl2);
+  
+  }
+  
+  #getintouch h4{
+  
+  font-size: 40px;
+  line-height: 55px;
+  font-weight: normal;
+  
+  }
+  
+  #getintouch p{
+  
+  font-size: 18px;
+  margin-bottom: 30px;
+  
+  }
+  
+  #details div{
+  
+  margin-bottom: 10px;
+  
+  }
+  
+  #details div i{
+  
+  font-size: 25px;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 30px;
+  background: var(--cl2);
+  color: var(--cl1);
+  margin-right: 10px;
+  
+  }
+  
+  #details div a{
+  
+  text-decoration: none;
+  color: var(--cl2);
+  font-size: 25px;
+  
+  }
+  
+  #contactMe #form{
+  
+  width: 420px;
+  
+  }
+  
+  #form input,
+  #form textarea,
+  #form button{
+  
+  display: block;
+  width: 100%;
+  font-size: 25px;
+  padding: 8px 15px;
+  border-radius: 5px;
+  outline: none;
+  border: 2px solid var(--cl2);
+  margin-bottom: 10px;
+  color: var(--cl2);
+  background: var(--cl1);
+  box-shadow: 0px 0px 0px 0px var(--cl2);
+  transition: all 0.5s;
+  
+  }
+  
+  #form input:focus,#form textarea:focus{
+  
+  box-shadow: 0px 0px 5px var(--cl2);
+  
+  }
+  
+  #form textarea{
+  
+  height: 150px;
+  
+  }
+  
+  #form button{
+  
+  color: var(--cl1);
+  background: var(--cl2);
+  font-weight: bold;
+  
+  }
+  
+  #form button:hover{
+  
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 10px -5px var(--cl2);
+  
+  }
+  
+  #footer{
+  	
+  	font-size: 25px;
+  	width: 100%;
+  	padding: 10px 50px;
+  	background: var(--cl2);
+  	color: var(--cl1);
+  	
+  }
+  
+  </style>
+    
+</head>
+<body>
+
+ <div id="container">
+ 
+   <div id="nav">
+   
+     <a id="logo" href="#">সান ওয়ার্ল্ড</a>
+     
+     <div id="links">
+     
+       <a href="#">হোম</a>
+       <a style="background: var(--cl2);color: var(--cl1);" href="#">অ্যাবাউট</a>
+       <a href="#">সেবাসমূহ</a>
+       <a href="#">অভিজ্ঞতা</a>
+       <a href="#">প্রজেক্টস</a>
+       <a href="#">কন্টাক্ট</a>
+     
+     </div>
+   
+   </div>
+   
+   <div id="landing">
+   
+     <div id="myself">
+     
+       <h3>দিস ইজ, <span>জিশান আহমেদ</span></h3>
+       
+       <p>আমি একজন শিক্ষার্থী এবং একজন ফুলস্ট্যাক ওয়েব ডেভেলপার.এই ওয়েবের মাধ্যমে আপনি পাচ্ছেন আপনার কাঙ্খিত ওয়েব সাইট তৈরীর নিশ্চয়তা.</p>
+       
+       <button>কন্ট্রাক্ট করুন</button>
+     
+     </div>
+     
+     <div id="slider">
+     
+       <div id="slide" class="slide">
+         
+         <img src="design.png"/>
+         <h4>ওয়েব ডিজাইন</h4>
+       
+       </div>
+       
+       <div id="slide">
+       
+         <img src="development.png"/>
+         <h4>ওয়েব ডেভেলপমেন্ট</h4>
+       
+       </div>
+       
+       <div id="slide">
+       
+         <img src="responsive.png"/>
+         <h4>রেসপন্সিভ ডিজাইন</h4>
+       
+       </div>
+       
+       <div id="slide">
+       
+         <img src="browsers.png"/>
+         <h4>ব্রাউজার কম্পিটিভিলিটি</h4>
+       
+       </div>
+       
+       <div id="slide">
+       
+         <img src="seo.png"/>
+         <h4>এস.ই.ও</h4>
+       
+       </div>
+     
+     </div>
+   
+   </div>
+   
+   <div id="about">
+   
+     <div id="aboutme">
+     
+       <h3>আমার সম্পর্কে</h3>
+       
+       <div id="myImg">
+       
+         <img src="personalization.png"/>
+       
+       </div>
+       
+       <div id="myDes">
+       
+         <h2>অ্যাবাউট, জিশান আহমেদ </h2>
+         
+         <p>হ্যালো,আমি জিশান আহমেদ,সিইও অফ <span>সান ওয়ার্ল্ড</span> এবং একজন ফুলস্ট্যাক ওয়েব ডেভেলপার.ওয়েব সংক্রান্ত আপনার যাবতীয় কাজের জন্য <span>সান ওয়ার্ল্ড</span> হতে পারে আপনার বিশ্বস্ত প্রতিষ্ঠান</p>
+       
+       </div>
+     
+     </div>
+     
+     <div id="skills">
+     
+       <h3>স্কিলস</h3>
+       
+       <div id="mySkill">
+       
+         <h2>আমার স্কিলসমূহ</h2>
+         
+         <div id="skillBar">
+         
+           <div>এইচটিএমএল</div>
+           <div id="skill"><div style="width: 85%;"></div></div>
+           <div>৮৫%</div>
+         
+         </div>
+         
+         <div id="skillBar">
+         
+           <div>সিএসএস</div>
+           <div id="skill"><div style="width: 95%;"></div></div>
+           <div>৯5%</div>
+         
+         </div>
+         
+         <div id="skillBar">
+         
+           <div>জাভাস্ক্রিপ্ট</div>
+           <div id="skill"><div style="width: 80%;"></div></div>
+           <div>৮০%</div>
+         
+         </div>
+         
+         <!--div id="skillBar">
+         
+           <div>বুটস্ট্রাপ</div>
+           <div id="skill"><div style="width: 90%;"></div></div>
+           <div>৯০%</div>
+         
+         </div-->
+         
+         <div id="skillBar">
+         
+           <div>পিএইচপি</div>
+           <div id="skill"><div style="width: 75%;"></div></div>
+           <div>৭৫%</div>
+         
+         </div>
+         
+         <div id="skillBar">
+         
+           <div>মাইএসকিউএল</div>
+           <div id="skill"><div style="width: 90%;"></div></div>
+           <div>৯০%</div>
+         
+         </div>
+         
+         <!--div id="skillBar">
+         
+           <div>এআই/পিএস</div>
+           <div id="skill"><div style="width: 80%;"></div></div>
+           <div>৮০%</div>
+         
+         </div-->
+       
+       </div>
+       
+       <div id="skillImg">
+       
+         <img src="staticassets.png"/>
+       
+       </div>
+     
+     </div>
+   
+   </div>
+   
+   <div id="services">
+   
+     <h3>সেবাসমূহ</h3>
+     
+     <div id="sercards">
+     
+      <div id="card">
+       
+       <img src="websitesetup.png"/>
+       
+       <h4>ওয়েব ডেভেলপমেন্ট</h4>
+       
+       <p>ফুলস্ট্যাক ওয়েব ডেভেলপার এর মাধ্যমে যেকোনো ধরনের ওয়েবসাইট তৈরীর নির্ভযোগ্য প্রতিষ্ঠান সান ওয়ার্ল্ড.</p>
+       
+       <button>অর্ডার করুন</button>
+       
+      </div>
+      
+      <div id="card">
+       
+       <img src="personaldata.png"/>
+       
+       <h4>গ্রাফিক্স ডিজাইন</h4>
+       
+       <p>বিশেষজ্ঞ ও অভিজ্ঞ গ্রাফিক্স ডিজাইনার সর্বদা রেডী সান ওয়ার্ল্ডে.পাচ্ছেন আই ক্যাচিং ও মনোমুগ্ধকর সব ডিজাইনের নিশ্চয়তা.</p>
+       
+       <button>অর্ডার করুন</button>
+       
+      </div>
+      
+      <div id="card">
+       
+       <img src="seo.png"/>
+       
+       <h4>এস.ই.ও</h4>
+       
+       <p>দক্ষ সব আইটি এক্সপার্ট   এর মাধ্যমে সকল সার্চ ইঞ্জিনে আপনার সাইট কে টপ র‍্যাংক করাতে সান ওয়ার্ল্ড আছে আপনার পাশে.</p>
+       
+       <button>অর্ডার করুন</button>
+       
+      </div>
+     
+     </div>
+   
+   </div>
+   
+   <div  id="exp">
+   
+     <h3>অভিজ্ঞতা</h3>
+     
+     <div id="expSec">
+     
+       <div id="expImg">
+       
+         <img src="projectcompleted.png"/>
+       
+       </div>
+       
+       <div id="expDes">
+       
+         <h4>অভিজ্ঞতা সমূহ</h4>
+         
+         <ul>
+         
+           <li>১. গ্রাজুয়েটেড ইন সিএসই</li>
+           <li>২. ৫ বছর+ মার্কেটপ্লেসে কাজ করার অভিজ্ঞতা</li>
+           <li>৩. ডব্লিও থ্রী স্কুল সার্টফিকেট</li>
+           <li>৪. ফ্রী কোড ক্যাম্প সার্টিফিকেট</li>
+           <li>৫. সার্টিফাইড সেলার ইন ফাইভার</li>
+         
+         </ul>
+       
+       </div>
+     
+     </div>
+     
+     <div  id="counter">
+     
+       <div id="countBlock">
+         
+         <p id="count">1250+</p>
+         
+         <p>প্রজেক্ট কমপ্লিটেড</p>
+       
+       </div>
+       
+       <div id="countBlock">
+         
+         <p id="count">1200+</p>
+         
+         <p>জন হ্যাপি ক্লায়েন্ট</p>
+       
+       </div>
+       
+       <div id="countBlock">
+         
+         <p id="count">2000+</p>
+         
+         <p>কাফ অফ কফি</p>
+       
+       </div>
+       
+       <div id="countBlock">
+         
+         <p id="count">800+</p>
+         
+         <p>নির্ঘুম রাত</p>
+       
+       </div>
+     
+     </div>
+   
+   </div>
+   
+   <div id="projects">
+   
+     <div id="projectHead">
+     
+     <h4>প্রজেক্টস</h4>
+     <p>আমার সাম্প্রতিক প্রজেক্ট সমূহ</p>
+     
+     </div>
+     
+     <div id="projectButtons">
+     
+       <button onclick="items([0,1,2,3,4,5],[])">সমস্তকিছু</button>
+       <button onclick="items([0,2,5],[1,3,4])">ডিজাইন</button>
+       <button onclick="items([1,2,3,4,5],[0])">ডেভেলপমেন্ট</button>
+       <button onclick="items([1,3,4],[0,2,5])">সি.ই.ও</button>
+     
+     </div>
+     
+     <div id="projectBody">
+     
+       <div id="project">
+       
+       
+         <img src="coffee-break.png"/>
+         <button>ওয়াচ মোর</button>
+       
+       </div>
+       
+       <div id="project">
+       
+       
+         <img src="programming.png"/>
+         <button>ওয়াচ মোর</button>
+       
+       </div>
+       
+       <div id="project">
+       
+       
+         <img src="night.png"/>
+         <button>ওয়াচ মোর</button>
+       
+       </div>
+       
+       <div id="project">
+       
+       
+         <img src="happy.png"/>
+         <button>ওয়াচ মোর</button>
+       
+       </div>
+       
+       <div id="project">
+       
+       
+         <img src="accept.png"/>
+         <button>ওয়াচ মোর</button>
+       
+       </div>
+       
+       <div id="project">
+       
+       
+         <img src="onlinecv.png"/>
+         <button>ওয়াচ মোর</button>
+       
+       </div>
+     
+     </div>
+   
+   </div>
+   
+   <div id="contacts">
+   
+     <h3>কন্টাক্ট</h3>
+   
+     <div id="gmap">
+     
+     <iframe src="https://maps.google.com/maps?q=Ramchandrapur,Muradnagar,Comilla&t=k&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+     
+     </div>
+     
+     <div id="contactMe">
+     
+       <div id="getintouch">
+       
+       <h4>কন্টাক্ট মী</h4>
+       <p>যেকোনো ধরনের পরামর্শে <span>সান ওয়ার্ল্ড</span> আছে আপনার পাশে</p>
+       
+       <div id="details">
+       
+       <div><i class="fas fa-phone"></i> <a href="tel:+880163963387">+৮৮০১৬৩৯৬৩৩৮৪৭</a></div>
+       
+       <div><i class="fas fa-envelope"></i> <a href="mailto:misanjaria@gmail.com">জিশান আহমেদ</a></div>
+       
+       <div><i class="fab fa-twitter"></i> <a href="https://twitter.com/JisanAh90877460/">জিশান আহমেদ(টুইটার)</a></div>
+       
+       <div><i class="fab fa-facebook-f"></i> <a href="https://www.facebook.com/ahmed.jisan.242">জিশান আহমেদ(ফেবু)</a></div>
+       
+       </div>
+       
+       </div>
+       
+       <div id="form">
+       
+       <input type="text" placeholder="Your Name"/>
+       <input type="text" placeholder="Your Email"/>
+       
+       <textarea placeholder="Your Messages"></textarea>
+       
+       <button>Send Message</button>
+       
+       </div>
+     
+     </div>
+   
+   </div>
+   
+   <div id="footer">
+   	
+   	জিশান আহমেদ © ২০২১
+   	
+   </div>
+         
+ </div>
+ 
+ <script>
+ 
+ let nav = document.querySelector("#nav");
+ 
+ let landing = document.querySelector("#landing");
+ 
+ let skill = document.querySelectorAll("#skill div");
+ 
+ let slide = document.querySelectorAll("#slide");
+ 
+ setInterval(function(){
+ 
+ if(slide[0].classList.contains("slide")){
+ 
+ slide[0].classList.remove("slide");
+ slide[1].classList.add("slide");
+ 
+ }
+ 
+ else if(slide[1].classList.contains("slide")){
+ 
+ slide[1].classList.remove("slide");
+ slide[2].classList.add("slide");
+ 
+ }
+ 
+ else if(slide[2].classList.contains("slide")){
+ 
+ slide[2].classList.remove("slide");
+ slide[3].classList.add("slide");
+ 
+ }
+ 
+ else if(slide[3].classList.contains("slide")){
+ 
+ slide[3].classList.remove("slide");
+ slide[4].classList.add("slide");
+ 
+ }
+ 
+ else{
+ 
+ slide[4].classList.remove("slide");
+ slide[1].classList.add("slide");
+ 
+ }
+ 
+ },4000);
+ 
+ function counter(){
+ 	
+ 	let range = [1250,1200,2000,800];
+ 	
+ 	let duration = 20000;
+ 	
+ 	let init = [0,0,0,0];
+ 	
+ let count = document.querySelectorAll("#count");
+   
+ timer1 = setInterval(() => {
+ 
+    init[0] += 5;
+    
+    count[0].innerHTML = init[0]+"+";
+    
+    if(init[0] == range[0]) {
+    
+     clearInterval(timer1);
+     
+    }
+    
+ },duration/range[0]);
+ 
+ timer2 = setInterval(() => {
+ 
+    init[1] += 5;
+    
+    count[1].innerHTML = init[1]+"+";
+    
+    if(init[1] == range[1]) {
+    
+     clearInterval(timer2);
+     
+    }
+    
+ },duration/range[1]);
+ 
+ timer3 = setInterval(() => {
+ 
+    init[2] += 5;
+    
+    count[2].innerHTML = init[2]+"+";
+    
+    if(init[2] == range[2]) {
+    
+     clearInterval(timer3);
+     
+    }
+    
+ },duration/range[2]);
+ 
+ timer4 = setInterval(() => {
+ 
+    init[3] += 5;
+    
+    count[3].innerHTML = init[3]+"+";
+    
+    if(init[3] == range[3]) {
+    
+     clearInterval(timer4);
+     
+    }
+    
+ },duration/range[3]);
+   
+ }
+ 
+ let status = "off";
+ 
+ window.onscroll = function(){
+ 
+ if((document.body.scrollTop > 2200 || document.documentElement.scrollTop > 2200) && status == "off"){
+ 
+ status = "on"
+ counter();
+ 
+ }
+ 
+ if(document.body.scrollTop > 500 || document.documentElement.scrollTop > 500){
+ 
+ for(i = 0;i <= skill.length;i++){
+ 
+ skill[i].classList.add("skill");
+ 
+ }
+ 
+ }
+ 
+ if(document.body.scrollTop > 0 || document.documentElement.scrollTop > 0){
+ 
+ nav.classList.add("nav");
+ landing.classList.add("landing");
+ 
+ }
+ 
+ else{
+ 
+ nav.classList.remove("nav");
+ landing.classList.remove("landing");
+ 
+ }
+ 
+ }
+ 
+ function items(show,hide){
+ 
+ let project = document.querySelectorAll("#project");
+ 
+ show.forEach((element)=>{
+ 
+ project[element].classList.remove("hideProject");
+ 
+        });
+ 
+ hide.forEach((element)=>{
+ 
+ project[element].classList.add("hideProject");
+        
+        });
+ 
+ }
+ 
+ </script>
+    
+</body>
+</html>
